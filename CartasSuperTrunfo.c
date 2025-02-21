@@ -1,22 +1,41 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    //variaveis para receber informações sobre cada cidade, divididas em int e float conforme necessário
+    int populacao1, pontosTuristicos1, populacao2, pontosTuristicos2;
+    float area1, pib1, area2, pib2;
+
+    //imprime na tela a informação que o usuário deve informar sobre a cidade e aloca na variável relacionada
+    printf("Digite a população da primeira cidade: ");
+    scanf("%d", &populacao1);
+
+    printf("Digite o número de pontos turísticos da primeira cidade: ");
+    scanf("%d", &pontosTuristicos1);
+
+    printf("Digite a área da primeira cidade: ");
+    scanf("%f", &area1);
+
+    printf("Digite o PIB da primeira cidade: ");
+    scanf("%f", &pib1);
+
+    printf("Digite a população da segunda cidade: ");
+    scanf("%d", &populacao2);
+
+    printf("Digite o número de pontos turísticos da segunda cidade: ");
+    scanf("%d", &pontosTuristicos2);
+
+    printf("Digite a área da segunda cidade: ");
+    scanf("%f", &area2);
+
+    printf("Digite o PIB da segunda cidade: ");
+    scanf("%f", &pib2);
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    //imprime na tela as informações sobre as cartas fornecidas pelo usuário
+    printf("Carta 1:\n População: %d\n Pontos Turísticos: %d\n", populacao1, pontosTuristicos1);
+    printf(" Área: %.2f Km²\n PIB: %.2f bilhões de reais\n\n", area1, pib1);
+
+    printf("Carta 2:\n População: %d\n Pontos Turísticos: %d\n", populacao2, pontosTuristicos2);
+    printf(" Área: %.2f Km²\n PIB: %.2f bilhões de reais\n", area2, pib2);
 
     return 0;
 }
