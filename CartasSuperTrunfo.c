@@ -7,7 +7,6 @@ int main(){
     char codigoCarta1[4], nomeCidade1[20], codigoCarta2[4], nomeCidade2[20];
     int pontosTuristicos1, pontosTuristicos2;
     float area1, pib1, area2, pib2, densidadePop1, densidadePop2, pibPerCap1, pibPerCap2;
-    float superPoder1, superPoder2;
 
     //imprime na tela a informação que o usuário deve informar sobre a cidade e aloca na variável relacionada    
     printf("Digite o estado da primeira cidade: ");
@@ -60,34 +59,28 @@ int main(){
     pibPerCap1 = (float)(pib1/populacao1);
     pibPerCap2 = (float)(pib2/populacao2);
 
-    //calcula o super poder somando todos os atributos numéricos e o inverso da densidade populacional
-    superPoder1 = (float)(populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCap1 + (1/densidadePop1));
-    superPoder2 = (float)(populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCap2 + (1/densidadePop2));
-
     //imprime na tela as informações sobre as cartas fornecidas pelo usuário
     printf("Carta 1:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n", estado1, codigoCarta1, nomeCidade1);
     printf(" População: %lu\n Pontos Turísticos: %d\n", populacao1, pontosTuristicos1);
     printf(" Área: %.2f Km²\n PIB: %.2f bilhões de reais\n", area1, pib1);
     printf(" A densidade populacional é: %.2f hab/km2\n O PIB per Capita é: %.2f reais\n", densidadePop1, pibPerCap1);
-    printf(" O Super Poder da Carta 1 vale: %f\n\n", superPoder1);
-
+    
     printf("Carta 2:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n", estado2, codigoCarta2, nomeCidade2);
     printf(" População: %lu\n Pontos Turísticos: %d\n", populacao2, pontosTuristicos2);
     printf(" Área: %.2f Km²\n PIB: %.2f bilhões de reais\n", area2, pib2);
-    printf(" A densidade populacional é: %.2f hab/km2\n O PIB per Capita é: %.2f reais\n", densidadePop2, pibPerCap2);
-    printf(" O Super Poder da Carta 2 vale: %f\n\n", superPoder2);
-
-    printf("*** Se o resultado for '1' a Carta 1 venceu, se o resultado for '0' a Carta 2 venceu ***\n\n");
-
-    //imprime na tela os resultados entra as comparações das cartas
-    printf("Vencedor da população: %d\n", populacao1 > populacao2);
-    printf("Vencedor dos pontos turísticos: %d\n", pontosTuristicos1 > pontosTuristicos2);
-    printf("Vencedor da área: %d\n", area1 > area2);
-    printf("Vencedor do PIB: %d\n", pib1 > pib2);
-    printf("Vencedor da densidade populacional: %d\n", densidadePop1 < densidadePop2);
-    printf("Vencedor do PIB per capita: %d\n", pibPerCap1 > pibPerCap2);
-    printf("Vencedor do Super Poder: %d\n", superPoder1 > superPoder2);
-
+    printf(" A densidade populacional é: %.2f hab/km2\n O PIB per Capita é: %.2f reais\n\n", densidadePop2, pibPerCap2);
+    
+    printf("Comparação de Cartas (Atributo: População):\n");
+    printf("Carta 1 - %s: %lu\n", nomeCidade1, populacao1);
+    printf("Carta 2 - %s: %lu\n", nomeCidade2, populacao2);
+    
+    //teste para verificar qual cidade possui a maior população
+    if(populacao1 > populacao2){
+        printf("Resultado: Carta 1 - (%s) venceu!\n", nomeCidade1);
+    }
+    else{
+        printf("Resultado: Carta 2 - (%s) venceu!\n", nomeCidade2);
+    }
     return 0;
 
 }
